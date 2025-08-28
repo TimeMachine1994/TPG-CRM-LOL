@@ -33,8 +33,8 @@ const loginUser = async (event: RequestEvent, formData: FormData) => {
 
 	const results = await db
 		.select()
-		.from(table.user)
-		.where(eq(table.user.username, username));
+		.from(table.users)
+		.where(eq(table.users.username, username));
 
 	const existingUser = results.at(0);
 	if (!existingUser) {
@@ -53,9 +53,10 @@ const loginUser = async (event: RequestEvent, formData: FormData) => {
 		return fail(400, { message: 'Incorrect username or password' });
 	}
 
-	console.log('Backend: Login successful for user:', existingUser.id);
+	console.log('Backend: Login successful for user:', existingUser.userId);
+
 	const sessionToken = auth.generateSessionToken();
-	const session = await auth.createSession(sessionToken, existingUser.id);
+	const session = await auth.createSession(sessionToken, existingUser.userId);
 	auth.setSessionTokenCookie(event, sessionToken, session.expiresAt);
 
 	return redirect(302, '/dashboard');
@@ -86,8 +87,8 @@ const registerUser = async (event: RequestEvent, formData: FormData) => {
 	});
 
 	try {
-		console.log('Backend: Attempting to insert new user into DB:', { id: userId, username });
-		await db.insert(table.user).values({ id: userId, username, passwordHash });
+		console.log('Backend: Attempting to insert new user into DB:', { userId: userId, username });
+		await db.insert(table.users).values({ userId: userId, username, passwordHash });
 		console.log('Backend: User registered successfully:', userId);
 
 		const sessionToken = auth.generateSessionToken();

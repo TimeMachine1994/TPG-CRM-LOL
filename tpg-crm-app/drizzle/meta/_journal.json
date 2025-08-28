@@ -1,0 +1,34 @@
+{
+  "version": "7",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1756409961987,
+      "tag": "0000_soft_viper",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1756411037835,
+      "tag": "0001_colorful_night_nurse",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1756412324779,
+      "tag": "0002_brainy_leper_queen",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "6",
+      "when": 1756414747225,
+      "tag": "0003_brief_moon_knight",
+      "breakpoints": true
+    }
+  ]
+}

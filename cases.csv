@@ -1,0 +1,4 @@
+Case ID,Case Name,Type,End (date/time),Firm / Attorney,Court ID,Tech Assigned,Last Update (timestamp)
+A-1234,People v. John Doe,Criminal,2025-09-15 17:00:00,Legal Eagles,C-001,Alice,2025-08-28 13:30:00
+B-5678,Smith v. Jones,Civil,2025-10-20 10:00:00,Justice & Co.,C-002,Bob,2025-08-28 13:35:00
+C-9012,Estate of Miller,Probate,2025-11-01 14:00:00,Legacy Law,C-001,Alice,2025-08-28 13:40:00
